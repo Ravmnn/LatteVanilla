@@ -4,6 +4,11 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
     </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Latte\Latte\Latte.csproj" />
+    </ItemGroup>
 
 </Project>

@@ -2,6 +2,10 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatteVanilla", "LatteVanilla\LatteVanilla.csproj", "{4D72BB3C-BF73-4C26-A54C-45066945D6E3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latte", "..\Latte\Latte\Latte.csproj", "{7C4C0B47-615F-4133-AEB8-1FE3598A9FA5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{4FF865CF-D44F-495F-B616-789D0CC613F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +16,13 @@ Global
 		{4D72BB3C-BF73-4C26-A54C-45066945D6E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D72BB3C-BF73-4C26-A54C-45066945D6E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D72BB3C-BF73-4C26-A54C-45066945D6E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C4C0B47-615F-4133-AEB8-1FE3598A9FA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C4C0B47-615F-4133-AEB8-1FE3598A9FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C4C0B47-615F-4133-AEB8-1FE3598A9FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C4C0B47-615F-4133-AEB8-1FE3598A9FA5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4FF865CF-D44F-495F-B616-789D0CC613F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FF865CF-D44F-495F-B616-789D0CC613F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FF865CF-D44F-495F-B616-789D0CC613F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FF865CF-D44F-495F-B616-789D0CC613F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
