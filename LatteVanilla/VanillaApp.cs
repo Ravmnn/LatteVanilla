@@ -18,6 +18,6 @@ public static class VanillaApp
     {
         App.Init(mode, title, defaultFont, styles, settings);
 
-        App.BackgroundColor = VanillaLightTheme.Background;
+        App.BackgroundColor = VanillaTheme.Background;
     }
 }
