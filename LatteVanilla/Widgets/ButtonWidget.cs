@@ -41,21 +41,53 @@ public class ButtonWidget : ButtonElement
     }
 
 
+    protected void StartDefaultAnimation()
+    {
+        _colorAnimation = VanillaTheme.AnimateProperty(Color, VanillaTheme.WidgetColor);
+        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.SelectableBorderColor);
+        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.SelectableBorderSize);
+    }
+
+    protected void StartHoverAnimation()
+    {
+        _colorAnimation = VanillaTheme.AnimateProperty(Color, VanillaTheme.SelectableHoveredColor);
+        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.SelectableHoveredBorderColor);
+        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.SelectableHoveredBorderSize);
+    }
+
+    protected void StartPressAnimation()
+    {
+        _colorAnimation = VanillaTheme.AnimateProperty(Color, VanillaTheme.SelectablePressedColor);
+        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.SelectablePressedBorderColor);
+        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.SelectablePressedBorderSize);
+    }
+
+
     public override void OnMouseEnter()
     {
         base.OnMouseEnter();
 
-        _colorAnimation = VanillaTheme.AnimateProperty(Color, VanillaTheme.SelectableHoveredColor);
-        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.SelectableHoveredBorderColor);
-        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.SelectableHoveredBorderSize);
+        StartHoverAnimation();
     }
 
     public override void OnMouseLeave()
     {
         base.OnMouseLeave();
 
-        _colorAnimation = VanillaTheme.AnimateProperty(Color, VanillaTheme.WidgetColor);
-        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.SelectableBorderColor);
-        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.SelectableBorderSize);
+        StartDefaultAnimation();
+    }
+
+    public override void OnMouseDown()
+    {
+        base.OnMouseDown();
+
+        StartPressAnimation();
+    }
+
+    public override void OnMouseUp()
+    {
+        base.OnMouseUp();
+
+        StartHoverAnimation();
     }
 }
