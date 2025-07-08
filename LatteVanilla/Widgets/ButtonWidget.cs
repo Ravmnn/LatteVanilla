@@ -16,9 +16,9 @@ public class ButtonWidget : ButtonElement
     public ButtonWidget(Element? parent, Vec2f position, Vec2f size, string? text) : base(parent, position, size, text)
     {
         Color.Set(VanillaTheme.WidgetColor);
-        BorderColor.Set(VanillaTheme.SelectableBorderColor);
-        BorderSize.Set(VanillaTheme.SelectableBorderSize);
-        Radius.Set(VanillaTheme.SelectableBorderRadius);
+        BorderColor.Set(VanillaTheme.ClickableBorderColor);
+        BorderSize.Set(VanillaTheme.ClickableBorderSize);
+        Radius.Set(VanillaTheme.ClickableBorderRadius);
 
         Text?.Color.Set(VanillaTheme.TextDefaultColor);
         Text?.SizePolicyMargin.Set(new Vec2f(25));
@@ -44,22 +44,22 @@ public class ButtonWidget : ButtonElement
     protected void StartDefaultAnimation()
     {
         _colorAnimation = VanillaTheme.AnimateProperty(Color, VanillaTheme.WidgetColor);
-        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.SelectableBorderColor);
-        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.SelectableBorderSize);
+        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.ClickableBorderColor);
+        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.ClickableBorderSize);
     }
 
     protected void StartHoverAnimation()
     {
-        _colorAnimation = VanillaTheme.AnimateProperty(Color, VanillaTheme.SelectableHoveredColor);
-        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.SelectableHoveredBorderColor);
-        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.SelectableHoveredBorderSize);
+        _colorAnimation = VanillaTheme.AnimateProperty(Color, VanillaTheme.ClickableHoveredColor);
+        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.ClickableHoveredBorderColor);
+        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.ClickableHoveredBorderSize);
     }
 
     protected void StartPressAnimation()
     {
-        _colorAnimation = VanillaTheme.AnimateProperty(Color, VanillaTheme.SelectablePressedColor);
-        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.SelectablePressedBorderColor);
-        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.SelectablePressedBorderSize);
+        _colorAnimation = VanillaTheme.AnimateProperty(Color, VanillaTheme.ClickablePressedColor);
+        _borderColorAnimation = VanillaTheme.AnimateProperty(BorderColor, VanillaTheme.ClickablePressedBorderColor);
+        _borderSizeAnimation = VanillaTheme.AnimateProperty(BorderSize, VanillaTheme.ClickablePressedBorderSize);
     }
 
 

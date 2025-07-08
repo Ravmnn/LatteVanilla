@@ -21,7 +21,7 @@ class Program
         {
             AntialiasingLevel = 4
         });
-        
+
         App.Debugger!.EnableKeyShortcuts = true;
 
         var button = new ButtonWidget(null, new Vec2f(), new Vec2f(130, 55), "Press")
