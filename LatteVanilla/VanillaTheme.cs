@@ -1,6 +1,6 @@
 using Latte.Core.Animation;
 using Latte.Core.Type;
-using Latte.Elements;
+using Latte.Elements.Properties;
 
 
 namespace LatteVanilla;
@@ -11,6 +11,8 @@ public static class VanillaTheme
     public static readonly ColorRGBA Background = new ColorRGBA(255, 255, 255);
 
     public static readonly ColorRGBA WidgetColor = new ColorRGBA(230, 230, 230);
+
+    public static readonly ColorRGBA ClickableFocusFrameColor = new ColorRGBA(240, 230, 170);
 
     public static readonly ColorRGBA ClickableBorderColor = new ColorRGBA(235, 235, 235, 100);
     public static readonly ColorRGBA ClickableHoveredColor = new ColorRGBA(215, 215, 215);

@@ -7,7 +7,7 @@ using Latte.Core.Application;
 namespace LatteVanilla;
 
 
-// BUG: Latte's debug system not fully working: show bounds, priority, clip area... etc.
+// TODO: add checkbox
 
 
 public static class VanillaApp

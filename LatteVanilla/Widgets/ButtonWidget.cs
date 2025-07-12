@@ -1,6 +1,9 @@
+using SFML.Window;
+
 using Latte.Core.Animation;
 using Latte.Core.Type;
 using Latte.Elements.Primitives;
+using Latte.Elements.Primitives.Shapes;
 
 
 namespace LatteVanilla.Widgets;
@@ -12,9 +15,25 @@ public class ButtonWidget : ButtonElement
     private AnimationData? _borderColorAnimation;
     private AnimationData? _borderSizeAnimation;
 
+    private readonly RectangleElement _focusedFrame;
+
 
     public ButtonWidget(Element? parent, Vec2f position, Vec2f size, string? text) : base(parent, position, size, text)
     {
+        _focusedFrame = new RectangleElement(this, new Vec2f(), new Vec2f())
+        {
+            Alignment = { Value = Latte.Elements.Behavior.Alignment.Center },
+
+            Color = { Value = SFML.Graphics.Color.Transparent },
+            BorderColor = { Value = VanillaTheme.ClickableFocusFrameColor },
+            BorderSize = { Value = 3f },
+
+            IgnoreMouseInput = true,
+
+            Visible = false,
+            Clip = false
+        };
+
         Color.Set(VanillaTheme.WidgetColor);
         BorderColor.Set(VanillaTheme.ClickableBorderColor);
         BorderSize.Set(VanillaTheme.ClickableBorderSize);
@@ -29,6 +48,7 @@ public class ButtonWidget : ButtonElement
     {
         base.Update();
 
+        UpdateFocusFrame();
         UpdateAnimations();
     }
 
@@ -38,6 +58,14 @@ public class ButtonWidget : ButtonElement
         _colorAnimation?.Update();
         _borderColorAnimation?.Update();
         _borderSizeAnimation?.Update();
+    }
+
+
+    private void UpdateFocusFrame()
+    {
+        _focusedFrame.Radius.Set(Radius);
+        _focusedFrame.Size.Set(GetBounds().Size + new Vec2f(3f, 3f));
+        _focusedFrame.Visible = Focused;
     }
 
 
@@ -74,7 +102,8 @@ public class ButtonWidget : ButtonElement
     {
         base.OnMouseLeave();
 
-        StartDefaultAnimation();
+        if (!Focused)
+            StartDefaultAnimation();
     }
 
     public override void OnMouseDown()
@@ -87,6 +116,36 @@ public class ButtonWidget : ButtonElement
     public override void OnMouseUp()
     {
         base.OnMouseUp();
+
+        StartHoverAnimation();
+    }
+
+
+    public override void OnFocus()
+    {
+        base.OnFocus();
+
+        StartHoverAnimation();
+    }
+
+    public override void OnUnfocus()
+    {
+        base.OnUnfocus();
+
+        StartDefaultAnimation();
+    }
+
+
+    public override void OnSubmitKeyDown(KeyEventArgs key)
+    {
+        base.OnSubmitKeyDown(key);
+
+        StartPressAnimation();
+    }
+
+    public override void OnSubmitKeyUp(KeyEventArgs key)
+    {
+        base.OnSubmitKeyUp(key);
 
         StartHoverAnimation();
     }
