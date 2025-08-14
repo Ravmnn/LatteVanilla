@@ -1,6 +1,8 @@
-﻿using SFML.Window;
-using SFML.Graphics;
+﻿using System.Reflection;
 
+using SFML.Window;
+
+using Latte.Core;
 using Latte.Core.Type;
 using Latte.Core.Application;
 using Latte.Elements.Behavior;
@@ -9,8 +11,7 @@ using LatteVanilla;
 using LatteVanilla.Widgets;
 
 
-
-namespace Test;
+namespace VanillaTest;
 
 
 class Program
@@ -24,7 +25,10 @@ class Program
 
     static void Main(string[] args)
     {
-        VanillaApp.Init(VideoMode.FullscreenModes[0], "Latte Vanilla", new Font("Fonts/NationalPark.ttf"), Styles.Default, new ContextSettings
+        var assembly = Assembly.GetExecutingAssembly();
+        var font = assembly.LoadFont("VanillaTest.Fonts.NationalPark.ttf");
+
+        VanillaApp.Init(VideoMode.FullscreenModes[0], "Latte Vanilla", font, Styles.Default, new ContextSettings
         {
             AntialiasingLevel = 4
         });

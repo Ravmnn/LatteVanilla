@@ -6,14 +6,11 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RuntimeIdentifiers>linux-x64;win-x64</RuntimeIdentifiers>
-        <PublishSingleFile>true</PublishSingleFile>
-        <PublishReadyToRun>true</PublishReadyToRun>
-        <RootNamespace>Test</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
         <ProjectReference Include="..\LatteVanilla\LatteVanilla.csproj" />
-        <Content Include="Fonts/**/*.*" CopyToOutputDirectory="Always" />
+        <EmbeddedResource Include="Fonts/**/*.*" CopyToOutputDirectory="Always"/>
     </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LatteVanilla", "LatteVanill
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Latte", "..\Latte\Latte\Latte.csproj", "{7C4C0B47-615F-4133-AEB8-1FE3598A9FA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{4FF865CF-D44F-495F-B616-789D0CC613F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VanillaTest", "VanillaTest\VanillaTest.csproj", "{AB8696CC-DCA3-4E40-9A47-DB139EC35FC5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,9 +20,9 @@ Global
 		{7C4C0B47-615F-4133-AEB8-1FE3598A9FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C4C0B47-615F-4133-AEB8-1FE3598A9FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C4C0B47-615F-4133-AEB8-1FE3598A9FA5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4FF865CF-D44F-495F-B616-789D0CC613F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4FF865CF-D44F-495F-B616-789D0CC613F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4FF865CF-D44F-495F-B616-789D0CC613F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4FF865CF-D44F-495F-B616-789D0CC613F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB8696CC-DCA3-4E40-9A47-DB139EC35FC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8696CC-DCA3-4E40-9A47-DB139EC35FC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8696CC-DCA3-4E40-9A47-DB139EC35FC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8696CC-DCA3-4E40-9A47-DB139EC35FC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
