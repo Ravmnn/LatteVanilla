@@ -1,9 +1,9 @@
-using Latte.Core.Animation;
+using Latte.Animation;
 using Latte.Core.Type;
-using Latte.Elements.Properties;
+using Latte.Application.Elements.Properties;
 
 
-namespace LatteVanilla;
+namespace Latte.Vanilla;
 
 
 public static class VanillaTheme

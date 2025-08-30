@@ -1,10 +1,10 @@
 using SFML.Window;
 using SFML.Graphics;
 
-using Latte.Core.Application;
+using Latte.Application;
 
 
-namespace LatteVanilla;
+namespace Latte.Vanilla;
 
 
 // TODO: add checkbox

@@ -4,11 +4,11 @@ using SFML.Window;
 
 using Latte.Core;
 using Latte.Core.Type;
-using Latte.Core.Application;
-using Latte.Elements.Behavior;
+using Latte.Application;
+using Latte.Application.Elements.Behavior;
 
-using LatteVanilla;
-using LatteVanilla.Widgets;
+using Latte.Vanilla;
+using Latte.Vanilla.Widgets;
 
 
 namespace VanillaTest;

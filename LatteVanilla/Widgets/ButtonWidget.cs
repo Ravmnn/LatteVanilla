@@ -1,12 +1,12 @@
+using Latte.Animation;
+using Latte.Core.Type;
+using Latte.Application.Elements.Primitives;
+using Latte.Application.Elements.Primitives.Shapes;
+
 using SFML.Window;
 
-using Latte.Core.Animation;
-using Latte.Core.Type;
-using Latte.Elements.Primitives;
-using Latte.Elements.Primitives.Shapes;
 
-
-namespace LatteVanilla.Widgets;
+namespace Latte.Vanilla.Widgets;
 
 
 public class ButtonWidget : ButtonElement
@@ -20,10 +20,9 @@ public class ButtonWidget : ButtonElement
 
     public ButtonWidget(Element? parent, Vec2f position, Vec2f size, string? text) : base(parent, position, size, text)
     {
-        _focusedFrame = new RectangleElement(this, new Vec2f(), new Vec2f())
+        // TODO: focus frame alignment is weird
+        _focusedFrame = new RectangleElement(this, null, new Vec2f())
         {
-            Alignment = { Value = Latte.Elements.Behavior.Alignment.Center },
-
             Color = { Value = SFML.Graphics.Color.Transparent },
             BorderColor = { Value = VanillaTheme.ClickableFocusFrameColor },
             BorderSize = { Value = 3f },
@@ -46,15 +45,17 @@ public class ButtonWidget : ButtonElement
 
     public override void Update()
     {
-        base.Update();
-
         UpdateFocusFrame();
         UpdateAnimations();
+
+        base.Update();
     }
 
 
     private void UpdateAnimations()
     {
+        // TODO: animations not working
+
         _colorAnimation?.Update();
         _borderColorAnimation?.Update();
         _borderSizeAnimation?.Update();
@@ -93,60 +94,60 @@ public class ButtonWidget : ButtonElement
 
     public override void OnMouseEnter()
     {
-        base.OnMouseEnter();
-
         StartHoverAnimation();
+
+        base.OnMouseEnter();
     }
 
     public override void OnMouseLeave()
     {
-        base.OnMouseLeave();
-
         if (!Focused)
             StartDefaultAnimation();
+
+        base.OnMouseLeave();
     }
 
     public override void OnMouseDown()
     {
-        base.OnMouseDown();
-
         StartPressAnimation();
+
+        base.OnMouseDown();
     }
 
     public override void OnMouseUp()
     {
-        base.OnMouseUp();
-
         StartHoverAnimation();
+
+        base.OnMouseUp();
     }
 
 
     public override void OnFocus()
     {
-        base.OnFocus();
-
         StartHoverAnimation();
+
+        base.OnFocus();
     }
 
     public override void OnUnfocus()
     {
-        base.OnUnfocus();
-
         StartDefaultAnimation();
+
+        base.OnUnfocus();
     }
 
 
     public override void OnSubmitKeyDown(KeyEventArgs key)
     {
-        base.OnSubmitKeyDown(key);
-
         StartPressAnimation();
+
+        base.OnSubmitKeyDown(key);
     }
 
     public override void OnSubmitKeyUp(KeyEventArgs key)
     {
-        base.OnSubmitKeyUp(key);
-
         StartHoverAnimation();
+
+        base.OnSubmitKeyUp(key);
     }
 }

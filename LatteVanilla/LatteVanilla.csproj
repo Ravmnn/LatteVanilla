@@ -5,6 +5,7 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <RuntimeIdentifiers>win-x64;linux-x64</RuntimeIdentifiers>
+        <RootNamespace>Latte.Vanilla</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
