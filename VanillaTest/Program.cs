@@ -23,15 +23,12 @@ class Program
         };
 
 
-    static void Main(string[] args)
+    private static void Main(string[] args)
     {
         var assembly = Assembly.GetExecutingAssembly();
         var font = assembly.LoadFont("VanillaTest.Fonts.NationalPark.ttf");
 
-        VanillaApp.Init(VideoMode.FullscreenModes[0], "Latte Vanilla", font, Styles.Default, new ContextSettings
-        {
-            AntialiasingLevel = 4
-        });
+        VanillaApp.Init(VideoMode.FullscreenModes[0], "Latte Vanilla", font);
 
         App.Debugger!.EnableKeyShortcuts = true;
 

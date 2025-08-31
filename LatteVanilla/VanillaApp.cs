@@ -12,7 +12,7 @@ namespace Latte.Vanilla;
 
 public static class VanillaApp
 {
-    public static void Init(VideoMode mode, string title, Font defaultFont, Styles styles, ContextSettings settings = default)
+    public static void Init(VideoMode mode, string title, Font defaultFont, Styles styles = Styles.Default, ContextSettings? settings = null)
     {
         App.Init(mode, title, defaultFont, styles, settings);
 

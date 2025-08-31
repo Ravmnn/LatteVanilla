@@ -54,8 +54,6 @@ public class ButtonWidget : ButtonElement
 
     private void UpdateAnimations()
     {
-        // TODO: animations not working
-
         _colorAnimation?.Update();
         _borderColorAnimation?.Update();
         _borderSizeAnimation?.Update();
