@@ -1,38 +1,28 @@
 using SFML.Window;
 
 using Latte.Animation;
-using Latte.Core.Type;
 using Latte.Application.Elements.Primitives;
+using Latte.Core.Type;
 
 
 namespace Latte.Vanilla.Widgets;
 
 
-public class ButtonWidget : ButtonElement, IVanillaClickableAnimation
+public class CheckBoxWidget : CheckBoxElement, IVanillaClickableAnimation
 {
     public IVanillaClickableAnimation ThisVanillaAnimation => this;
 
-    protected readonly FocusFrameWidget<ButtonWidget> FocusFrame;
+    protected readonly FocusFrameWidget<CheckBoxWidget> FocusFrame;
 
     public AnimationData? ColorAnimation { get; set; }
     public AnimationData? BorderColorAnimation { get; set; }
     public AnimationData? BorderSizeAnimation { get; set; }
 
 
-    public ButtonWidget(Element? parent, Vec2f? position, Vec2f? size, string? text)
-        : base(parent, position, size ?? VanillaStyle.ButtonSize, text)
+    public CheckBoxWidget(Element? parent, Vec2f? position, bool selected = false)
+        : base(parent, position, selected)
     {
-
-        // TODO: move the logic of styling something to VanillaStyle.cs
-        Color.Set(VanillaStyle.WidgetColor);
-        BorderColor.Set(VanillaStyle.ClickableBorderColor);
-        BorderSize.Set(VanillaStyle.ClickableBorderSize);
-        Radius.Set(VanillaStyle.ClickableBorderRadius);
-
-        Text?.Color.Set(VanillaStyle.TextColor);
-        Text?.SizePolicyMargin.Set(VanillaStyle.ButtonTextSizePolicyMargin);
-
-        FocusFrame = new FocusFrameWidget<ButtonWidget>(this);
+        FocusFrame = new FocusFrameWidget<CheckBoxWidget>(this);
     }
 
 

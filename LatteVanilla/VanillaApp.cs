@@ -8,6 +8,7 @@ namespace Latte.Vanilla;
 
 
 // TODO: add checkbox
+// TODO: add text input
 
 
 public static class VanillaApp
@@ -16,6 +17,6 @@ public static class VanillaApp
     {
         App.Init(mode, title, defaultFont, styles, settings);
 
-        App.BackgroundColor = VanillaTheme.Background;
+        App.BackgroundColor = VanillaStyle.BackgroundColor;
     }
 }

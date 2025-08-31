@@ -28,14 +28,17 @@ class Program
         var assembly = Assembly.GetExecutingAssembly();
         var font = assembly.LoadFont("VanillaTest.Fonts.NationalPark.ttf");
 
-        VanillaApp.Init(VideoMode.FullscreenModes[0], "Latte Vanilla", font);
+        VanillaApp.Init(new VideoMode(600, 400), "Latte Vanilla", font);
 
         App.Debugger!.EnableKeyShortcuts = true;
 
-        App.AddElement(NewButton(Alignment.TopLeft));
-        App.AddElement(NewButton(Alignment.TopRight));
-        App.AddElement(NewButton(Alignment.BottomLeft));
-        App.AddElement(NewButton(Alignment.BottomRight));
+        var button = new ButtonWidget(null, null, null, "Confirm")
+        {
+            Alignment = { Value = Alignment.BottomRight },
+            AlignmentMargin = { Value = new Vec2f(-10f, -10f) }
+        };
+
+        App.AddElement(button);
 
         while (!App.ShouldQuit)
         {
